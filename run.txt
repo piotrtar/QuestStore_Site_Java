@@ -1,0 +1,4 @@
+java -jar target/school-project-1.0-SNAPSHOT-jar-with-dependencies.jar 
+
+To execute maven goal:
+clean compile package
