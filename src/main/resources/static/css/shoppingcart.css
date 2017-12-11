@@ -1,0 +1,629 @@
+/*
+I wanted to go with a mobile first approach, but it actually lead to more verbose CSS in this case, so I've gone web first. Can't always force things...
+
+Side note: I know that this style of nesting in SASS doesn't result in the most performance efficient CSS code... but on the OCD/organizational side, I like it. So for CodePen purposes, CSS selector performance be damned.
+*/
+/* Global settings */
+/* Global "table" column settings */
+.product-image {
+    float: left;
+    width: 20%;
+}
+
+.product-details {
+    float: left;
+    width: 37%;
+}
+
+.product-price {
+    float: left;
+    width: 12%;
+}
+
+.product-quantity {
+    float: left;
+    width: 10%;
+}
+
+.product-removal {
+    float: left;
+    width: 9%;
+}
+
+.product-line-price {
+    float: left;
+    width: 12%;
+    text-align: right;
+}
+
+/* This is used as the traditional .clearfix class */
+.group:before, .shopping-cart:before, .column-labels:before, .product:before, .totals-item:before,
+.group:after,
+.shopping-cart:after,
+.column-labels:after,
+.product:after,
+.totals-item:after {
+    content: '';
+    display: table;
+}
+
+.group:after, .shopping-cart:after, .column-labels:after, .product:after, .totals-item:after {
+    clear: both;
+}
+
+.group, .shopping-cart, .column-labels, .product, .totals-item {
+    zoom: 1;
+}
+
+/* Apply clearfix in a few places */
+/* Apply dollar signs */
+.product .product-price:before, .product .product-line-price:before, .totals-value:before {
+    content: url('../img/ccoin2.png');
+}
+
+/* Body/Header stuff */
+body {
+    padding: 0px 30px 30px 20px;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background:  linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url("../img/background2.jpg") center top / cover;
+    background-attachment: fixed;
+    font-weight: 100;
+    font-size: 18px;
+    padding: 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 200%;
+    color: #AFA339;
+    font-weight: bold;
+    justify-content: center;
+    background: black;
+    padding: 15px;
+}
+
+
+h1 {
+    font-weight: 100;
+    padding: 5px;
+}
+
+label {
+    color: #ffffff;
+}
+
+.shopping-cart {
+    margin-top: -45px;
+    padding: 5%;
+}
+
+/* Column headers */
+.column-labels label {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.column-labels .product-image, .column-labels .product-details, .column-labels .product-removal {
+    text-indent: -9999px;
+}
+
+/* Product entries */
+.product {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.product .product-image {
+    text-align: center;
+}
+
+.product .product-image img {
+    width: 100px;
+}
+
+.product .product-details .product-title {
+    margin-right: 20px;
+    font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
+}
+
+.product .product-details .product-description {
+    margin: 5px 20px 5px 0;
+    line-height: 1.4em;
+}
+
+.product .product-quantity input {
+    width: 40px;
+}
+
+.product .remove-product {
+    border: 0;
+    padding: 4px 8px;
+    background-color: #c66;
+    color: #fff;
+    font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
+    font-size: 12px;
+    border-radius: 3px;
+}
+
+.product .remove-product:hover {
+    background-color: #a44;
+}
+
+/* Totals section */
+.totals .totals-item {
+    float: right;
+    clear: both;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.totals .totals-item label {
+    float: left;
+    clear: both;
+    width: 79%;
+    text-align: right;
+}
+
+.totals .totals-item .totals-value {
+    float: right;
+    width: 21%;
+    text-align: right;
+}
+
+.totals .totals-item-total {
+    font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
+}
+
+.checkout {
+    float: right;
+    border: 0;
+    margin-top: 20px;
+    padding: 6px 25px;
+    background-color: #6b6;
+    color: #fff;
+    font-size: 25px;
+    border-radius: 3px;
+    margin-left: 20px;
+}
+
+.continueshopping {
+    float: right;
+    border: 0;
+    margin-top: 20px;
+    padding: 6px 25px;
+    background-color: #6b6;
+    color: #fff;
+    font-size: 25px;
+    border-radius: 3px;
+}
+
+.checkout:hover {
+    background-color: #494;
+    cursor: pointer;
+}
+
+.continueshopping:hover {
+    background-color: #494;
+    cursor: pointer;
+}
+
+/* Make adjustments for tablet */
+@media screen and (max-width: 650px) {
+    .shopping-cart {
+        margin: 0;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
+    }
+
+    .column-labels {
+        display: none;
+    }
+
+    .product-image {
+        float: right;
+        width: auto;
+    }
+
+    .product-image img {
+        margin: 0 0 10px 10px;
+    }
+
+    .product-details {
+        float: none;
+        margin-bottom: 10px;
+        width: auto;
+    }
+
+    .product-price {
+        clear: both;
+        width: 70px;
+    }
+
+    .product-quantity {
+        width: 100px;
+    }
+
+    .product-quantity input {
+        margin-left: 20px;
+    }
+
+    .product-quantity:before {
+        content: 'x';
+    }
+
+    .product-removal {
+        width: auto;
+    }
+
+    .product-line-price {
+        float: right;
+        width: 70px;
+    }
+}
+
+/* Make more adjustments for phone */
+@media screen and (max-width: 350px) {
+    .product-removal {
+        float: right;
+    }
+
+    .product-line-price {
+        float: right;
+        clear: left;
+        width: auto;
+        margin-top: 10px;
+    }
+
+    .product .product-line-price:before {
+        content: 'Item Total: $';
+    }
+
+    .totals .totals-item label {
+        width: 60%;
+    }
+
+    .totals .totals-item .totals-value {
+        width: 40%;
+    }
+}
+
+/*Menu bar*/
+
+.stickymenu
+{
+    display: flex;
+    justify-content: space-between;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    /*background: linear-gradient(to right, rgba(255,246,76,0.6) 0%, rgba(250,148,70,1) 100%);*/
+    background: black;
+    opacity: 0.85;
+    text-align: center;
+    border-top: 1px solid #282828;
+    border-bottom: 1px solid #282828;
+    width: 100%;
+    z-index: 100;
+}
+
+.leftmenu
+{
+    width:60%;
+    float: left;
+    margin-left: 20px;
+}
+
+.rightmenu
+{
+    width:30%;
+    float: right;
+    margin-right: 20px;
+
+}
+
+
+#user {
+    font-size: 20px;
+    margin-right: 5px;
+    line-height: 40px;
+}
+
+#users {
+    font-size: 20px;
+    margin-right: 5px;
+    line-height: 40px;
+}
+
+#cart_font {
+    font-size: 20px;
+    margin-right: 5px;
+    line-height: 40px;
+}
+
+#facebook_font {
+    /*font-size: 50px;*/
+    font-size: 15px;
+    margin-right: 5px;
+    line-height: 40px;
+}
+
+#instagram_font {
+    /*font-size: 50px;*/
+    font-size: 15px;
+    margin-right: 5px;
+    line-height: 40px;
+}
+
+.fb
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+
+.fb:hover
+{
+    background-color: #4668b3;
+}
+
+.instagram
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+
+.instagram:hover
+{
+    background: #f09433;
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+}
+
+.icon-facebook
+{
+    color: white;
+}
+
+.icon-instagram
+{
+    color: white;
+}
+
+#footer_page .authors
+{
+    margin-right: 10px;
+}
+
+#left_footer
+{
+    display: flex;
+    justify-content: flex-start;
+}
+
+#footer_page
+{
+    display: flex;
+    justify-content: space-between;
+    opacity: 0.5;
+    font-size: 1.5vw;
+    position: fixed;
+    left: 0; bottom: 0;
+    padding: 4px;
+    background: #b6a886;
+    color: #fff;
+    width: 100%;
+}
+
+a.links
+{
+    color: white;
+    text-decoration: none;
+}
+
+a.links:hover
+{
+    color: #000000;
+    text-decoration: none;
+}
+
+a.socialhtml5
+{
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    color: #ffffff;
+    text-decoration: none;
+    height: 20px;
+}
+
+a.editmentordiv
+{
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    text-decoration: none;
+    padding:2%;
+}
+a.editmentordiv:hover
+{
+    background-color: #255367;
+    text-decoration: none;
+}
+
+ol
+{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    font-size: 18px;
+    height: 45px;
+    line-height: 200%;
+}
+
+.mentorOl
+{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    font-size: 18px;
+    height: 45px;
+    line-height: 180%;
+}
+
+ol a
+{
+    color: #FFFFFF;
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+}
+
+#myacc_btn
+{
+    width: 190px;
+}
+
+#group_btn
+{
+    width: 265px;
+}
+
+#coin
+{
+    width: auto;
+    padding-right: 20px;
+    padding-left: 10px;
+}
+
+#cart_btn
+{
+    width: 75px;
+}
+
+/*Hover for only cart button*/
+.rightmenu > ol > #cart:hover
+{
+    background-color: #757070
+}
+
+ol > li
+{
+    display: block;
+    height: 35px;
+    background: #2A2A2B;
+    text-decoration: none;
+    border-radius: 50px;
+    float: left;
+    margin: 5px;
+}
+
+
+ol > li:hover > ul
+{
+    display: block;
+    height: 250px;
+}
+
+ol > li > ul
+{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    overflow: hidden;
+    height: 0;
+    transition: height 0.2s 0.1s ease-out;
+}
+
+/*My account dropdown list*/
+ol > li > ul > li:hover
+{
+    background-color: #413B3B;
+}
+
+ol > li > ul > li
+{
+    background-color: #2A2A2B;
+    position: relative;
+    z-index: 100;
+    border-top: 1px solid #424141;
+}
+
+ol > li > ul > li:hover > a
+{
+    color: #C0B62F;
+}
+
+a.links
+{
+    color: white;
+    text-decoration: none;
+}
+
+a.links:hover
+{
+    color: #000000;
+    text-decoration: none;
+}
+
+.rightmenu > ol > li {
+    background-color: #292727;
+
+}
+
+
+.leftmenu > ol > li {
+    background-color: #2A2A2B;
+}
+
+.leftmenu > ol > li:hover {
+    background-color: #3B3939;
+}
+
+.leftmenu > ol a
+{
+    color: #f4f4f4;
+    opacity: 0.8;
+}
+
+.leftmenu > ol > li:hover > a
+{
+    color: #C0B62F;
+}
+
+
+/*Transaction unsuccessful*/
+
+.transactionbox
+{
+    display: flex;
+    padding:5%;
+    justify-content: center;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    flex-direction: column;
+}
+
+.transactionform
+{
+    display: flex;
+    justify-content:center;
+}
+
+.transactionmessage
+{
+    padding:20px;
+}
+
+.hidden{
+  display: none;
+}

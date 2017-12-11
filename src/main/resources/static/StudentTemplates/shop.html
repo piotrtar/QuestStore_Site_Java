@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:font-weight="http://www.w3.org/1999/xhtml">
+<head>
+    <script type="text/javascript"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <script>
+    {% if added_to_basket == true %}
+    $(window).load(function() {
+    $("#added").delay(10000).hide(0);
+            $(function() {
+            $('html, body').animate({
+                scrollTop: $('#purchasing').offset().top}, 400);
+                });
+        });
+        {% endif %}
+
+        function showLogin() {
+        $(function() {
+            $('html, body').animate({
+                scrollTop: $('#purchasing').offset().top}, 300);
+                });
+                }
+
+         function showAddedToBasket() {
+
+           var added_item_button = document.getElementById('admincontent3');
+           var first_page_background = document.getElementById('admincontent3');
+              var actualDisplay = getComputedStyle(added_item_button).display;
+              if (actualDisplay == 'none') {
+                added_item_button.style.display = 'block';
+
+
+              } else {
+              added_item_button.style.display = 'none';
+
+            }
+         }
+
+    </script>
+
+    <title>
+        QuestStore - CodeCool
+    </title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" type="text/css" href ='static/css/shop.css'>
+    <link rel="stylesheet" type="text/css" href ='static/css/style1.css'>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
+
+    <script src="https://use.fontawesome.com/0dc27d5e41.js"></script>
+
+
+</head>
+<body>
+
+{% for student in students %}
+<div class="page">
+    <div class="header">
+
+        <div class="logo">
+
+            <img src="static/img/logo.png" height="60" width="60" style="float: left;"/>
+            <span style="color: #E0E0E0" font-weight: bold;>Quest</span>Store
+        </div>
+    </div>
+
+    <div class="stickymenu">
+        <div class="leftmenu">
+            <ol>
+                <li><a id="myacc_btn" href="students"><i class="fa fa-user" id="user" aria-hidden="true"></i>
+                    My account
+                </a>
+                    <ul>
+                        <li><a href="myartifacts">My Artifacts</a></li>
+                        <li><a href="quests">My Quests</a></li>
+                        <li><a href="availablequests">Available Quests</a></li>
+                        <li><a href="shop">Shop</a></li>
+                        <li><a href="loginForm">Log Out</a></li>
+                    </ul>
+                </li>
+                <!--Group shopping - to implement in future-->
+
+                <!--<li><a id="group_btn" href="groupshopping.html"><i class="fa fa-users" id="users" aria-hidden="true"></i>-->
+                    <!--Group shopping-->
+                <!--</a>-->
+                <!--</li>-->
+            </ol>
+        </div>
+        <div class="rightmenu">
+            <ol>
+                <li><a id="coin"><img src ="static/img/ccoin.png" class="shopcoin" height="23" width="23" style="float: left;" hspace="2"/>{{student.getWallet().getBalance()}}</a></li>
+                <li id="cart"><a id="cart_btn" href="payment"><i class="fa fa-shopping-cart" id="cart_font" aria-hidden="true"></i>{{ student.getBasket().getProductList().size() }}</a></li>
+            </ol>
+        </div>
+
+    </div>
+
+    {% endfor %}
+    <div class="wrapper">
+
+        <div class="shopContent">
+
+            <div class="shopRectangle">
+                <div class="shopTitle">
+
+                    WELCOME  TO STORE
+
+                </div>
+                <h1 id="accounth1">
+                    It's Nice To See You
+                </h1>
+            </div>
+
+        </div>
+        <a class="button" href="javascript:{}" onclick="showLogin();" target="_blank" id="TellMeMoreButton">PURCHASE</a>
+    </div>
+
+
+    <div class="main_bg1">
+        <div class="wrap">
+            <div class="main1">
+                <h2>Artifacts</h2>
+            </div>
+        </div>
+    </div>
+    <!-- start main -->
+    <div class="main_bg" id="purchasing">
+        <div class="wrap">
+            <div class="main">
+                <!-- start grids_of_3 -->
+                <form method="post">
+                    {% for artifact in artifacts %}
+                        {% if  loop.index0 % 3 == 0 %}
+                    <div class="grids_of_3">
+                        {% endif %}
+
+                        <div class="grid1_of_3">
+
+                            <input type="submit" class="hidden" id="{{ artifact.getTitle() }}"  value="{{ artifact.getId() }}" name="id">
+                            <a href="javascript:{}" onclick="document.getElementById('{{ artifact.getTitle() }}').click(); return false;" id="href_id">
+
+                                <h3>{{ artifact.getTitle() }}</h3>
+                                <div class="price">
+                                    <h4>$ {{artifact.getPrice() }}<span> BUY </span></h4>
+                                </div>
+
+                                <span class="b_btm"></span>
+                            </a>
+                        </div>
+                        {% endfor %}
+
+                    <div class="clear"></div>
+                </div>
+                </form>
+                <!--/#cart_items-->
+            </div>
+        </div>
+    </div>
+
+    <div onmousemove="showAddedToBasket();" class="admincontent3" id="admincontent3">
+
+        <div class="rectangle">
+            <div class="cartmessage">
+
+                <img src="static/img/virtueMart_logo.png" height="150" width="150">
+
+            </div>
+        </div>
+
+    </div>
+
+    {% if added_to_basket == true %}
+                <script type="text/javascript">
+                showAddedToBasket();
+                </script>
+    {% endif %}
+
+    <footer>
+        <div id="footer_page">
+            <div id="left_footer">
+                <span>&copy; 2017</span>
+                <a href="students" class="links">Home Page</a>
+            </div>
+            <a href="https://www.facebook.com/CodecoolPoland/" target="_blank" class="socialhtml5">
+                <div class="fb">
+                    <i class="fa fa-facebook" id="facebook_font" aria-hidden="true"></i>
+                </div>
+            </a>
+            <a href="https://www.instagram.com/codecool_official/" target="_blank" class="socialhtml5">
+                <div class="instagram">
+                    <i class="fa fa-instagram" id="instagram_font" aria-hidden="true"></i>
+                </div>
+            </a>
+            <span class="authors">Valentyn Potapov, Piotr Tarczon</span>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>
+
+

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:font-weight="http://www.w3.org/1999/xhtml">
+<head>
+    <script type="text/javascript"></script>
+
+    <title>
+        QuestStore
+    </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="static/css/general_style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+    <script src="https://use.fontawesome.com/0dc27d5e41.js"></script>
+    <script type="text/javascript"></script>
+
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="header">
+
+        <div class="logo">
+            <img src="static/img/logo.png" height="60" width="60" style="float: left;"/>
+            <span style="color: #E0E0E0" font-weight: bold;>Quest</span>Store
+        </div>
+    </div>
+    <div class="stickymenu">
+        <div class="leftmenu">
+            <ol class="mentorOl">
+                <li><a id="myacc_btn" href="markstudentquest"><i class="fa fa-user" id="user" aria-hidden="true"></i>
+                    Mark quest
+                </a>
+                    <ul>
+                        <li><a href="mentors">Home page</a></li>
+                        <li><a href="markstudentquest">Mark quest</a></li>
+                        <li><a href="addquest">Add quest</a></li>
+                        <li><a href="editquest">Edit quest</a></li>
+                        <li><a href="deletequest">Delete quest</a></li>
+                        <li><a href="logOut">Log Out</a></li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="mentorcontent">
+
+        <div class="rectangle">
+            <div class="showstudenttitle">
+                Choose student to mark his quest
+            </div>
+            <form method="post">
+            <table>
+                {% for student in students %}
+                <tr>
+                    <td><a href="javascript:{}" onclick="document.getElementById('{{ student.getId() }}').click(); return false;" class="editstudentdiv">{{ student.getName() }}   {{ student.getSurname() }}</a>
+                        <input type="submit" class="hidden" id="{{ student.getId() }}"  value="{{ student.getId() }}" name="id"></td>
+                </tr>
+
+                {% endfor %}
+
+            </table>
+            </form>
+        </div>
+
+        <div class="buttons">
+
+            <a href="mentor_account.html" class="homebutton">
+                <div class="payment">
+                    Home
+                </div>
+            </a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div id="footer_page">
+            <div id="left_footer">
+                <span>&copy; 2017</span>
+                <a href="account.html" class="links">Account Page</a>
+            </div>
+            <a href="https://www.facebook.com/CodecoolPoland/" target="_blank" class="socialhtml5">
+                <div class="fb">
+                    <i class="fa fa-facebook" id="facebook_font" aria-hidden="true"></i>
+                </div>
+            </a>
+            <a href="https://www.instagram.com/codecool_official/" target="_blank" class="socialhtml5">
+                <div class="instagram">
+                    <i class="fa fa-instagram" id="instagram_font" aria-hidden="true"></i>
+                </div>
+            </a>
+            <span class="authors">Valentyn Potapov, Piotr Tarczon</span>
+        </div>
+    </footer>
+
+</div>
+
+</body>
+</html>
