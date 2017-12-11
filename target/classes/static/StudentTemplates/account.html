@@ -1,0 +1,19 @@
+
+{% include "classpath:/header.html" %}
+
+<div class="accountContent">
+
+    <div class="accountRectangle">
+        <div class="accountTitle">
+            {% for student in students %}
+            WELCOME  {{ student.getName() }}
+            {% endfor %}
+        </div>
+        <h1 id="accounth1">
+            It's Nice To See You
+        </h1>
+    </div>
+
+</div>
+
+    {% include "classpath:/footer.html" %}

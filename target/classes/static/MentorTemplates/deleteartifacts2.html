@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:font-weight="http://www.w3.org/1999/xhtml">
+<head>
+    <script type="text/javascript"></script>
+
+    <title>
+        QuestStore
+    </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="static/css/general_style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+    <script src="https://use.fontawesome.com/0dc27d5e41.js"></script>
+    <script type="text/javascript"></script>
+
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="header">
+
+        <div class="logo">
+            <img src="static/img/logo.png" height="60" width="60" style="float: left;"/>
+            <span style="color: #E0E0E0" font-weight: bold;>Quest</span>Store
+        </div>
+    </div>
+    <div class="stickymenu">
+        <div class="leftmenu">
+            <ol class="mentorOl">
+                <li><a id="myacc_btn" href="deleteartifacts"><i class="fa fa-user" id="user" aria-hidden="true"></i>
+                    Delete artifact
+                </a>
+                    <ul>
+                        <li><a href="mentors">Home page</a></li>
+                        <li><a href="markstudentartifact">Mark artifact</a></li>
+                        <li><a href="addartifacs">Add artifact</a></li>
+                        <li><a href="editartifact">Edit artifact</a></li>
+                        <li><a href="deleteartifacts">Delete artifacts</a></li>
+                        <li><a href="logOut">Log Out</a></li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="mentorcontent">
+
+        <div class="rectangle">
+
+            <form method="post" action="deletesubmission">
+            <div class="message">
+                Are you sure you want to delete this artifact?
+                {% for artifact in artifact %}
+                <div class="information">{{ artifact.getTitle() }}</div>
+                {% endfor %}
+            </div>
+    </div>
+        <form method="post" action="deletesubmission">
+        <div class="deletebuttons">
+
+            <a href="javascript:{}" onclick="document.getElementById('id').click(); return false;" class="homebutton">
+                <div class="payment">
+                    Yes
+                </div>
+            </a>
+            <a href="manageartifacts" class="homebutton">
+                <div class="payment">
+                    No
+                </div>
+            </a>
+
+                <input type="submit" class="hidden" id="id" value="{{ artifact.getId() }}" name="artifact_id">
+        </div>
+    </div>
+    </form>
+
+    <footer>
+        <div id="footer_page">
+            <div id="left_footer">
+                <span>&copy; 2017</span>
+                <a href="account.html" class="links">Account Page</a>
+            </div>
+            <a href="https://www.facebook.com/CodecoolPoland/" target="_blank" class="socialhtml5">
+                <div class="fb">
+                    <i class="fa fa-facebook" id="facebook_font" aria-hidden="true"></i>
+                </div>
+            </a>
+            <a href="https://www.instagram.com/codecool_official/" target="_blank" class="socialhtml5">
+                <div class="instagram">
+                    <i class="fa fa-instagram" id="instagram_font" aria-hidden="true"></i>
+                </div>
+            </a>
+            <span class="authors">Valentyn Potapov, Piotr Tarczon</span>
+        </div>
+    </footer>
+
+</div>
+
+</body>
+</html>

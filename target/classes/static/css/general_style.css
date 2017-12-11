@@ -1,0 +1,957 @@
+body{
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    background:  linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url("../img/image1.jpg") center top / cover;
+    background-attachment: fixed;
+    padding: 0;
+    margin: 0 !important;
+    min-width: 550px;
+}
+
+.wrapper
+{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.header
+{
+    display: flex;
+    width: 100%;
+    padding: 40px 0;
+    justify-content: center;
+}
+
+.logo
+{
+    display: flex;
+    width: 50%;
+    align-items: center;
+    font-size: 200%;
+    color:#AFA339;
+    font-weight: bold;
+    justify-content: center;
+}
+
+.stickymenu
+{
+    display: flex;
+    justify-content: space-between;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background: linear-gradient(to right, rgba(255,246,76,0.6) 0%, rgba(250,148,70,1) 100%);
+    text-align: center;
+    border-top: 1px solid #282828;
+    border-bottom: 1px solid #282828;
+    width: 100%;
+    z-index: 100;
+}
+
+.leftmenu
+{
+    width:60%;
+    float: left;
+    margin-left: 20px;
+}
+
+.rightmenu
+{
+    width:30%;
+    float: right;
+    margin-right: 20px;
+
+}
+
+
+#user {
+    font-size: 20px;
+    margin-right: 5px;
+    line-height: 40px;
+}
+
+#users {
+    font-size: 20px;
+    margin-right: 5px;
+    line-height: 40px;
+}
+
+#cart_font {
+    font-size: 20px;
+    margin-right: 5px;
+    line-height: 40px;
+}
+
+#facebook_font {
+    /*font-size: 50px;*/
+    font-size: 15px;
+    margin-right: 5px;
+    line-height: 40px;
+}
+
+#instagram_font {
+    /*font-size: 50px;*/
+    font-size: 15px;
+    margin-right: 5px;
+    line-height: 40px;
+}
+
+/*AccountCSS*/
+
+.accountContent
+{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    color:white;
+    padding-top: 40px;
+    height:60vh;
+}
+
+.accountRectangle
+{
+    display: block;
+    width: 80%;
+    opacity: 0.5;
+
+}
+
+#accounth1{
+    animation: TitlePosition 4s ease-in;
+    display: flex;
+    font-size: 5vw;
+    color: white;
+    text-transform: uppercase;
+    justify-content: center;
+    margin: 15px;
+    text-align: center;
+}
+
+@keyframes TitlePosition
+{
+    from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+}
+
+.accountTitle
+{
+    display: flex;
+    justify-content: center;
+    font-size: 5vw;
+    text-transform: uppercase;
+    padding: 15px;
+    opacity: 0.8;
+}
+
+/*Template*/
+
+.content
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    flex-wrap: wrap;
+    font-size: 2vw;
+}
+
+.rectangle
+{
+    width: 70%;
+    background-color: #006666;
+    border-radius: 30px;
+    opacity: 0.9;
+}
+
+.actionRectangle
+{
+    background-color: #006666;
+    border-radius: 30px;
+    opacity: 0.9;
+}
+
+.title
+{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 3vw;
+    border-top: 2px solid #B9AB2C;
+    border-bottom: 2px solid #B9AB2C;
+    border-left: 2px solid #B9AB2C;
+    border-right: 2px solid #B9AB2C;
+    border-radius: 30px;
+    padding: 15px;
+}
+
+table
+{
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.admintable
+{
+    width:100%;
+    padding-bottom: 0;
+}
+
+.coursetable
+{
+    width:100%;
+    padding-bottom: 20px;
+}
+
+#contenttable
+{
+    width: 100%;
+}
+
+#totalamount
+{
+    font-size: 2vw;
+
+}
+
+.totalamountpayment
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+}
+
+
+.numbers
+{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 40px;
+    padding: 10px;
+
+}
+
+#number
+{
+
+    text-align: center;
+    width: 150px;
+}
+
+td
+{
+    padding: 15px;
+    font-size: 1.5vw;
+    text-align:center;
+    vertical-align:middle;
+}
+
+.coin25
+{
+    float: left;
+    width: 20%;
+}
+
+.tdpayment
+{
+    height: 100%;
+    vertical-align: middle;
+    padding: 5px;
+    font-size: 1.5vw;
+    text-align:center;
+}
+
+th
+{
+    font-size: 2vw;
+    padding: 30px;
+    text-align:center;
+    vertical-align:middle;
+}
+
+.tablerow:hover
+{
+    cursor: pointer;
+    background-color: #255367;
+}
+
+.tablerow2:hover
+{
+    background-color: #255367;
+}
+
+
+/*AdminTemplate*/
+
+.admincontent
+{
+    display: flex;
+    width: 55%;
+    min-width: 450px;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    padding-top: 4%;
+    padding-bottom: 7%;
+    flex-wrap: wrap;
+    font-size: 2vw;
+}
+
+.editAddContent
+{
+    display: flex;
+    width: 55%;
+    min-width: 450px;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    padding-top: 4%;
+    padding-bottom: 7%;
+    flex-wrap: wrap;
+    font-size: 15px;
+}
+
+#admincontent3
+{
+    display: none;
+    width: 55%;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    padding-top: 10%;
+    flex-wrap: wrap;
+    font-size: 2vw;
+    margin-top: -50vw;
+    -webkit-animation: seconds 1.0s forwards;
+      -webkit-animation-iteration-count: 1;
+      -webkit-animation-delay: 1.5s;
+      animation: seconds 1.0s forwards;
+      animation-iteration-count: 1;
+      animation-delay: 1.5s;
+
+}
+
+.message
+{
+    font-size: 2w;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 35px;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.showmentortitle
+{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 2vw;
+    border-top: 2px solid #B9AB2C;
+    border-bottom: 2px solid #B9AB2C;
+    border-left: 2px solid #B9AB2C;
+    border-right: 2px solid #B9AB2C;
+    border-radius: 30px;
+    padding: 15px;
+}
+
+.information
+{
+    padding: 2vw;
+    display: flex;
+    justify-content: center;
+}
+
+.courseTitle
+{
+    display: flex;
+    justify-content: center;
+    font-size: 2vw;
+    border-top: 2px solid #B9AB2C;
+    border-bottom: 2px solid #B9AB2C;
+    border-left: 2px solid #B9AB2C;
+    border-right: 2px solid #B9AB2C;
+    border-radius: 30px;
+    padding: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/*Mentor Template*/
+
+.mentorcontent
+{
+    display: flex;
+    width: 55%;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    padding-top: 4%;
+    padding-bottom: 7%;
+    flex-wrap: wrap;
+    font-size: 2vw;
+}
+
+a.editstudentdiv
+{
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    text-decoration: none;
+    padding:2%;
+}
+a.editstudentdiv:hover
+{
+    background-color: #255367;
+    text-decoration: none;
+}
+
+.showstudenttitle
+{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 2vw;
+    border-top: 2px solid #B9AB2C;
+    border-bottom: 2px solid #B9AB2C;
+    border-left: 2px solid #B9AB2C;
+    border-right: 2px solid #B9AB2C;
+    border-radius: 30px;
+    padding: 3vw;
+}
+
+/*Quest Manager Template*/
+
+.questcontent
+{
+    display: flex;
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    padding-top: 4%;
+    padding-bottom: 7%;
+    flex-wrap: wrap;
+    font-size: 2vw;
+}
+
+.questrectangle
+{
+    width: 100%;
+    background-color: #006666;
+    border-radius: 30px;
+    opacity: 0.9;
+    padding-bottom: 20px;
+}
+
+/*InputForm*/
+
+form
+{
+    padding: 5%;
+}
+
+.adminform
+{
+    padding:0;
+}
+
+.flex-outer
+{
+    list-style-type: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.flex-outer li
+{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.flex-outer > li:not(:last-child)
+{
+    margin-bottom: 20px;
+}
+
+.flex-outer li label,
+.flex-outer li p
+{
+    padding: 8px;
+    font-weight: 300;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+}
+
+.flex-outer > li > label,
+.flex-outer li p
+{
+    flex: 1 0 120px;
+    max-width: 220px;
+}
+
+.flex-outer > li > label + *
+{
+    flex: 1 0 220px;
+}
+
+.flex-outer li p
+{
+    margin: 0;
+}
+
+.flex-outer li input:not([type='checkbox']),
+.flex-outer li textarea
+{
+    padding: 15px;
+    border: none;
+}
+
+input.button
+{
+    margin: auto;
+    padding: 8px 16px;
+    border: none;
+    background: #333;
+    color: #f2f2f2;
+    text-transform: uppercase;
+    letter-spacing: .09em;
+    border-radius: 2px;
+    margin-top: 2%;
+    font-size: 1.5vw;
+    text-decoration: none;
+    cursor:pointer;
+}
+
+input.button:hover
+{
+    opacity: 0.8;
+}
+
+/*End of inputForm*/
+
+/*Input Form for marking quest*/
+
+.flex-outer-quest
+{
+    list-style-type: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.flex-outer-quest li
+{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.flex-outer-quest > li:not(:last-child)
+{
+    margin-bottom: 20px;
+}
+
+.flex-outer-quest li label,
+.flex-outer-quest li p
+{
+    padding: 8px;
+    font-weight: 300;
+    /*letter-spacing: .09em;*/
+    /*text-transform: uppercase;*/
+}
+
+.flex-outer-quest > li > label,
+.flex-outer-quest li p
+{
+    flex: 1 0 120px;
+    max-width: 220px;
+}
+
+.flex-outer-quest > li > label + *
+{
+    flex: 1 0 220px;
+}
+
+.flex-outer-quest li p
+{
+    margin: 0;
+}
+
+.flex-outer-quest li input:not([type='checkbox']),
+.flex-outer-quest li textarea
+{
+    padding: 15px;
+    border: none;
+}
+
+/*End of inputform for marking quest*/
+
+input[type="checkbox"]{
+    width: 30px; /*Desired width*/
+    height: 30px; /*Desired height*/
+}
+
+.buttons
+{
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 5%;
+    font-size: 2.5vw;
+}
+
+.deletebuttons
+{
+    width: 30vw;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5%;
+    font-size: 2.5vw;
+}
+
+.paymentButtons
+{
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5%;
+    font-size: 2.5vw;
+}
+
+a.homebutton
+{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+p
+{
+    display: flex;
+    justify-content: center;
+}
+
+/*unsuccessfulpaymentCSS*/
+
+.unsuccessfullpaymentButtons
+{
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5%;
+    font-size: 2vw;
+}
+.unsuccesspayment
+{
+    font-size: 2vw;
+    justify-content: center;
+}
+
+.back, .payment, .cancel
+{
+
+    border-top: 2px solid #ACA7A7;
+    border-bottom: 2px solid #ACA7A7;
+    border-left: 2px solid #ACA7A7;
+    border-right: 2px solid #ACA7A7;
+    background-color: #D66C2F;
+    border-radius: 50px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.payment:hover, .cancel:hover
+{
+    background-color: #975833;
+}
+
+.back:hover
+{
+    background-color: #975833;
+}
+
+.fb
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+
+.fb:hover
+{
+    background-color: #4668b3;
+}
+
+.instagram
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+
+.instagram:hover
+{
+    background: #f09433;
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+}
+
+.icon-facebook
+{
+    color: white;
+}
+
+.icon-instagram
+{
+    color: white;
+}
+
+#footer_page .authors
+{
+    margin-right: 10px;
+}
+
+#left_footer
+{
+    display: flex;
+    justify-content: flex-start;
+}
+
+#footer_page
+{
+    display: flex;
+    justify-content: space-between;
+    opacity: 0.5;
+    font-size: 1.5vw;
+    position: fixed;
+    left: 0; bottom: 0;
+    padding: 4px;
+    background: #b6a886;
+    color: #fff;
+    width: 100%;
+}
+
+a.links
+{
+    color: white;
+    text-decoration: none;
+}
+
+a.links:hover
+{
+    color: #000000;
+    text-decoration: none;
+}
+
+a.socialhtml5
+{
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    color: #ffffff;
+    text-decoration: none;
+    height: 20px;
+}
+
+a.editmentordiv
+{
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    text-decoration: none;
+    padding:2%;
+}
+a.editmentordiv:hover
+{
+    background-color: #255367;
+    text-decoration: none;
+}
+
+ol
+{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    font-size: 18px;
+    height: 45px;
+    line-height: 200%;
+}
+
+.mentorOl
+{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    font-size: 18px;
+    height: 45px;
+    line-height: 180%;
+}
+
+ol a
+{
+    color: #FFFFFF;
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+}
+
+#myacc_btn
+{
+    width: 190px;
+}
+
+#group_btn
+{
+    width: 265px;
+}
+
+#coin
+{
+    width: auto;
+    padding-right: 15px;
+    padding-left: 10px;
+}
+
+#cart_btn
+{
+    width: 75px;
+}
+
+/*Hover for only cart button*/
+.rightmenu > ol > #cart:hover
+{
+    background-color: #757070
+}
+
+ol > li
+{
+    display: block;
+    height: 35px;
+    background: #2A2A2B;
+    text-decoration: none;
+    border-radius: 50px;
+    float: left;
+    margin: 5px;
+}
+
+
+ol > li:hover > ul
+{
+    display: block;
+    height: 250px;
+}
+
+ol > li > ul
+{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    overflow: hidden;
+    height: 0;
+    transition: height 0.2s 0.1s ease-out;
+}
+
+/*My account dropdown list*/
+ol > li > ul > li:hover
+{
+    background-color: #413B3B;
+}
+
+ol > li > ul > li
+{
+    background-color: #2A2A2B;
+    position: relative;
+    z-index: 100;
+    border-top: 1px solid #424141;
+}
+
+ol > li > ul > li:hover > a
+{
+    color: #C0B62F;
+}
+
+a.links
+{
+    color: white;
+    text-decoration: none;
+}
+
+a.links:hover
+{
+    color: #000000;
+    text-decoration: none;
+}
+
+.rightmenu > ol > li {
+    background-color: #292727;
+
+}
+
+
+.leftmenu > ol > li {
+    background-color: #2A2A2B;
+}
+
+.leftmenu > ol > li:hover {
+    background-color: #3B3939;
+}
+
+.leftmenu > ol a
+{
+    color: #f4f4f4;
+    opacity: 0.8;
+}
+
+.leftmenu > ol > li:hover > a
+{
+    color: #C0B62F;
+}
+
+@-webkit-keyframes seconds {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    left: -9999px;
+  }
+}
+@keyframes seconds {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    left: -9999px;
+  }
+}
+
+.hidden{
+  display: none;
+}
+
+input.button:hover
+{
+    opacity: 0.8;
+}
